@@ -10,6 +10,9 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import CraftItem from './CraftItem';
+import OurCeo from './OurCeo';
+import WhyDifferent from './WhyDifferent';
 
 
 const Home = () => {
@@ -17,7 +20,7 @@ const Home = () => {
         <div>
             <h2>Hi this is home page</h2>
 
-            <div className=''>
+            <div className='mt-10 mb-10'>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
@@ -32,15 +35,49 @@ const Home = () => {
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
-                <SwiperSlide className=''><img className='w-3/4 border rounded-xl h-96 text' src="https://i.ibb.co/XL8cSmp/Oil-Painting.jpg" alt="" /></SwiperSlide>
-                <SwiperSlide><img className='w-1/4 border rounded-xl h-96' src="https://i.ibb.co/syPWgDn/Potrait.jpg" alt="" /></SwiperSlide>
-                <SwiperSlide><img className='w-1/4 border rounded-xl h-96' src="https://i.ibb.co/KVwTyDJ/Architechtural.jpg" alt="" /></SwiperSlide>
-                <SwiperSlide><img className='w-1/4 border rounded-xl h-96' src="https://i.ibb.co/8DZ1fSy/Cartoon.jpg" alt="" /></SwiperSlide>
-                <SwiperSlide><img className='w-1/4 border rounded-xl h-96' src="https://i.ibb.co/ngVSrWF/Watercolor.jpg" alt="" /></SwiperSlide>
-                <SwiperSlide><img className='w-1/4 border rounded-xl h-96' src="https://i.ibb.co/LkyRwHh/Charcol.jpg" alt="" /></SwiperSlide>
-                <SwiperSlide><img className='w-1/4 border rounded-xl h-96' src="https://i.ibb.co/dtPRP9n/LandScap.jpg" alt="" /></SwiperSlide>
+                <SwiperSlide   style={{backgroundImage:'url(https://i.ibb.co/3hNyyzt/Landscap.jpg)'}} className='w-full border rounded-xl '>
+                    <div  >
+                        <p>hi</p>
+                        <p>hi</p>
+                        <p>hi</p>
+                        <p>hi</p>
+                    </div>
+                </SwiperSlide>
+
+
+
+
+                <SwiperSlide className=''><img className='w-full border rounded-xl h-96 text' src="https://i.ibb.co/3hNyyzt/Landscap.jpg" alt="" /></SwiperSlide>
+                <SwiperSlide><img className='w-full border rounded-xl h-96' src="https://i.ibb.co/BP9mDj0/Charcol.jpg" alt="" /></SwiperSlide>
+                <SwiperSlide><img className='w-full border rounded-xl h-96' src="https://i.ibb.co/c3xqHhG/Floral.jpg" alt="" /></SwiperSlide>
+                <SwiperSlide><img className='w-full border rounded-xl h-96' src="https://i.ibb.co/mzb6T7J/Prot.jpg" alt="" /></SwiperSlide>
+                <SwiperSlide><img className='w-full border rounded-xl h-96' src="https://i.ibb.co/w65SDjz/Cartoon.jpg" alt="" /></SwiperSlide>
+                <SwiperSlide><img className='w-full border rounded-xl h-96' src="https://i.ibb.co/17b5pZ0/Archi.jpg" alt="" /></SwiperSlide>
+                
                 
             </Swiper>
+            </div>
+
+
+           
+
+            <div>
+                <CraftItem></CraftItem>
+            </div>
+            
+            <br /><br /><hr /><br />
+                
+            <div>
+                <h1 className='text-center mb-10 font-extrabold text-3xl'>Why we are different form other</h1>
+                <WhyDifferent></WhyDifferent>
+            </div>
+
+            <br />
+            <hr />
+
+
+            <div>
+                <OurCeo></OurCeo>
             </div>
 
         </div>
