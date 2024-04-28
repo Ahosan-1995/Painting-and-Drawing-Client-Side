@@ -4,6 +4,7 @@ import ErrorPage from "../Shared/ErrorPage";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import AddArtAndCraft from "../Pages/AddArtAndCraft";
 
 
 
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
             {
                 path:'/register',
                 element:<Register></Register>
+            },
+            {
+                path:'/add',
+                element:<AddArtAndCraft></AddArtAndCraft>
             }
         ]
     }
