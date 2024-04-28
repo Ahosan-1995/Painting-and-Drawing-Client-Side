@@ -1,7 +1,20 @@
 
-import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import toast from 'react-hot-toast';
+import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Navbar = () => {
+
+
+    const {user,logOut}=useContext(AuthContext);
+
+
+    const handleSignOut= (e)=>{
+        logOut()
+        .then()
+        .catch()
+    }
 
 
     const navLinks = <>
@@ -36,7 +49,30 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="navbar-end">
-                       <NavLink to='/login'> <a className="btn">Login</a></NavLink>
+                    {
+                            user ? 
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
+                                </div>
+                                <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 text-white">
+                                <span className="text-xs">{user.displayName}</span>
+                                </div>
+                            </div>
+                            :
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full bg-white">
+                                   
+                                </div>
+                            </div>
+                        }
+                    {
+                            user ? 
+                            <button onClick={() => {toast('Logged out successfully.'); handleSignOut();}}  className="btn">Sign Out</button>
+                            :
+                            <Link to='/login'><button className="btn">Login</button></Link>
+                          
+                        }
                     </div>
             </div>
         </div>

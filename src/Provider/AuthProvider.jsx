@@ -1,7 +1,8 @@
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut,GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import app from "../Firebase/firebase.config";
 
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+
 
 
 
@@ -10,7 +11,12 @@ const auth = getAuth(app);
 
 export const AuthContext = createContext(null);
 
+// Sign in google
+// const googleProvider = new GoogleAuthProvider();
+const googleAuthProvider = new GoogleAuthProvider();
 
+// Sign in Github
+const gitHubProvider = new GithubAuthProvider();
 
 
 const AuthProvider = ({children}) => {
@@ -24,9 +30,60 @@ const AuthProvider = ({children}) => {
     } 
 
 
+    const signIn = (email,password)=>{
+        setLoading(true);
+        return signInWithEmailAndPassword(auth,email,password);
+    }
+
+
+    const logOut = ()=>{
+        setLoading(true);
+        return signOut(auth);
+
+    }
+
+
+    // GOOGLE SIGN IN
+    // const signInWithGoogle1 = ()=>{
+    //     setLoading(true);
+    //     return signInWithPopup(auth, googleProvider);
+    // }
+
+    const signInWithGoogle=()=>{
+        setLoading(true);
+        return signInWithPopup(auth, googleAuthProvider)
+    }
+
+    
+
+ // GIT SIGN IN
+    const createGitHub=()=>{
+        setLoading(true);
+        return signInWithPopup(auth, gitHubProvider)
+    }
+
+
+    useEffect(()=>{
+        const unSubscribe = onAuthStateChanged(auth, currentUser =>{
+            console.log('user in the on auth state change', currentUser);
+            setUser(currentUser);
+            setLoading(false);
+        });
+        return ()=>{
+            unSubscribe();
+        }
+    },[])
+
+
 const authInfo={
     user,
     createUser,
+    signInWithGoogle,
+    createGitHub,
+    logOut,
+    loading,
+    signIn
+
 }
     return (
         <AuthContext.Provider value={authInfo}>
