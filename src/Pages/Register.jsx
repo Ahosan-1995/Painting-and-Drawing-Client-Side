@@ -1,8 +1,79 @@
+import { useContext, useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
+import { updateProfile } from "firebase/auth";
 
 
 const Register = () => {
+
+    useEffect(()=>{
+        document.title = 'ComfortResident-Register';
+    },[])
+
+    const {createUser}=useContext(AuthContext);
+    
+
+    // Passwrd toggle
+    const [showPassword, setShowPassword] = useState(false);
+
+
+    const handleRegister = (e)=>{
+        e.preventDefault();
+        // console.log(e.currentTarget);
+        const form = new FormData(e.currentTarget);
+        const email = form.get('email');
+        const password = form.get('password');
+        const name = form.get('name');
+        const url = form.get('url');
+
+
+
+        
+        
+        console.log(email,password,name,url);
+
+// Password varification done
+            if(password.length<6){
+                toast('password should be atleast 6 character')
+                return;
+            }else if(!/[A-Z]/.test(password)){
+                toast('password should be contain atleast one upper case character')
+                return;
+            }else if(!/[a-z]/.test(password)){
+                toast('password should be contain atleast one lower case character')
+                return;
+            }else{
+                toast('You have register successfully')
+            }
+
+
+
+        createUser(email, password)
+        .then(result=>{
+            console.log(result);
+
+            updateProfile(result.user,{
+                displayName: name,
+                photoURL: url
+            })
+            .then()
+            .catch()
+        })
+        .catch(error=>{
+            console.error(error); 
+            toast(error.message);
+        })
+
+
+        
+
+    }
+
+
+
+
     return (
         <div>
                 <div className="hero min-h-screen bg-base-200">
@@ -12,7 +83,7 @@ const Register = () => {
                     <p className="py-6">For assistance, contact our support team at comfortrealestate@gmail.com</p>
                     </div>
                     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form  className="card-body">
+                    <form onSubmit={handleRegister} className="card-body">
                         
 
                         <div className="form-control">
@@ -43,8 +114,8 @@ const Register = () => {
                             
                         </label>
                         <div className="flex w-full items-center justify-between ">
-                        <input type="password" name="password" placeholder="password" className="input input-bordered" required />
-                        <span><FaEyeSlash /> : <FaEye /></span>
+                        <input type={showPassword ? "text" : "password"} name="password" placeholder="password" className="input input-bordered" required />
+                        <span onClick={()=>setShowPassword(!showPassword)}>{showPassword ? <FaEyeSlash /> : <FaEye />}</span>
                         </div>
                         </div>
                         <div className="form-control mt-6">
