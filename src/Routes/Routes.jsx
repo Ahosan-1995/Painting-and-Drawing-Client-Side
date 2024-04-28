@@ -5,6 +5,7 @@ import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import AddArtAndCraft from "../Pages/AddArtAndCraft";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/add',
-                element:<AddArtAndCraft></AddArtAndCraft>
+                element:<PrivateRoute><AddArtAndCraft></AddArtAndCraft></PrivateRoute>
             }
         ]
     }
