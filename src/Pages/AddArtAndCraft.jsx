@@ -1,4 +1,5 @@
-import React from 'react';
+import toast from "react-hot-toast";
+import Swal from 'sweetalert2'
 
 const AddArtAndCraft = () => {
 
@@ -32,6 +33,15 @@ const AddArtAndCraft = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
+            if(data.insertedId){
+                // toast('Data added successfully to the database');
+                Swal.fire({
+                    title: 'Success',
+                    text: 'User Added Successfully',
+                    icon: 'Success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
         })
         
     }

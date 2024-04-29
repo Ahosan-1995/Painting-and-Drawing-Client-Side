@@ -13,12 +13,18 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import CraftItem from './CraftItem';
 import OurCeo from './OurCeo';
 import WhyDifferent from './WhyDifferent';
+import { useLoaderData } from 'react-router-dom';
 
 
 const Home = () => {
+
+    const myUsers = useLoaderData();
+    console.log(myUsers);
+
+
     return (
         <div>
-            <h2>Hi this is home page</h2>
+            <h2>Hi this is home page: {myUsers.length}</h2>
 
             <div className='mt-10 mb-10'>
             <Swiper
@@ -61,8 +67,10 @@ const Home = () => {
 
            
 
-            <div>
-                <CraftItem></CraftItem>
+            <div className='space-y-7 md:grid md:grid-cols-2 md:gap-x-4'>
+               {
+                myUsers.map(myUser=> <CraftItem key={myUser._id} myUser={myUser}></CraftItem>)
+               }
             </div>
             
             <br /><br /><hr /><br />

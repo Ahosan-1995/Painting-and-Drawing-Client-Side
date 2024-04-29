@@ -7,6 +7,7 @@ import Register from "../Pages/Register";
 import AddArtAndCraft from "../Pages/AddArtAndCraft";
 import PrivateRoute from "./PrivateRoute";
 import Update from "../Pages/Update";
+import ViewDetails from "../Pages/ViewDetails";
 
 
 
@@ -18,7 +19,8 @@ const router = createBrowserRouter([
         children:[
             {
                 path:'/',
-                element:<Home></Home>
+                element:<Home></Home>,
+                loader: () => fetch('http://localhost:5000/assignment')
             },
             {
                 path:'/login',
@@ -35,6 +37,12 @@ const router = createBrowserRouter([
             {
                 path:'/update',
                 element:<PrivateRoute><Update></Update></PrivateRoute>
+            },
+            {
+                path:'/details/:id',
+                element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
+                loader: ({params})=> fetch (`http://localhost:5000/assignment/${params.id}`)
+                
             }
         ]
     }

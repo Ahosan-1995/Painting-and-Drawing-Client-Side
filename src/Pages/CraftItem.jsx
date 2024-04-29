@@ -1,16 +1,18 @@
+import { Link } from "react-router-dom";
 
 
-const CraftItem = () => {
+const CraftItem = ({myUser}) => {
+    const {_id,url,itemName,subcategory,description,price,rating,customization,time,stock,email,user,category} = myUser;
     return (
         <div>
             <div className="lg:flex flex-row justify-center items-center gap-x-12 bg-base-300">
                 <div>
-                    <img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" alt="" />
+                    <img className="w-60 rounded-lg" src={url} alt="" />
                 </div>
                 <div>
-                    <h1 className="text-5xl font-bold">Box Office News!</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    <button className="btn btn-primary">Get Started</button>
+                    <h1 className="text-5xl font-bold">{itemName}</h1>
+                    <p className="py-6">{description}</p>
+                    <Link to={`/details/${_id}`}><button className="btn btn-primary">View Details</button></Link>
                 </div>
             </div>
         </div>
