@@ -10,6 +10,7 @@ const Navbar = () => {
     const {user,logOut}=useContext(AuthContext);
 
 
+
     const handleSignOut= (e)=>{
         logOut()
         .then()
@@ -20,9 +21,9 @@ const Navbar = () => {
     const navLinks = <>
 
         <NavLink to='/'><li><a>Home</a></li></NavLink>
-        <NavLink to='/all'><li><a>ALL ART & CRAFT</a></li></NavLink>
+        <NavLink to='/allArt'><li><a>ALL ART & CRAFT</a></li></NavLink>
         <NavLink to='/add'><li><a>Add ART & CRAFT</a></li></NavLink>
-        <NavLink to='/myitem'><li><a>MY ART & CRAFT</a></li></NavLink>
+        <NavLink to='/myCraft'><li><a>MY ART & CRAFT</a></li></NavLink>
         {/* <NavLink to='/login'><li><a>Login</a></li></NavLink> */}
         <NavLink to='/register'><li><a>Register</a></li></NavLink>
         <NavLink to='/update'><li><a>Update</a></li></NavLink>

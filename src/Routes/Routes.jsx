@@ -8,6 +8,8 @@ import AddArtAndCraft from "../Pages/AddArtAndCraft";
 import PrivateRoute from "./PrivateRoute";
 import Update from "../Pages/Update";
 import ViewDetails from "../Pages/ViewDetails";
+import MyArtAndCraft from "../Pages/MyArtAndCraft";
+import AllArtAndCraft from "../Pages/AllArtAndCraft";
 
 
 
@@ -43,6 +45,17 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
                 loader: ({params})=> fetch (`http://localhost:5000/assignment/${params.id}`)
                 
+            },
+            {
+                path:'/myCraft',
+                element: <PrivateRoute><MyArtAndCraft></MyArtAndCraft></PrivateRoute>,
+                // loader:()=>fetch()
+            },
+            {
+                path: '/allArt',
+                element: <PrivateRoute><AllArtAndCraft></AllArtAndCraft></PrivateRoute>,
+                loader: () => fetch('http://localhost:5000/assignment')
+
             }
         ]
     }

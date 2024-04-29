@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
-import { FaStar } from "react-icons/fa";
-import { MdCollections, MdOutlineAccessTime } from "react-icons/md";
+import { FaStar, FaUserAlt } from "react-icons/fa";
+import { MdCollections, MdMarkEmailRead, MdOutlineAccessTime } from "react-icons/md";
 import { IoPricetagSharp } from "react-icons/io5";
 import { FaScrewdriverWrench } from "react-icons/fa6";
 
@@ -22,11 +22,13 @@ const ViewDetails = () => {
                     <h2 className="card-title">{subcategory}</h2>
                     <p>{description}</p>
                     <div className="flex flex-col">
-                        <h4 className="flex"><span><FaStar /></span> Rating:{rating}</h4>
-                        <h4 className="flex"><span><MdCollections /></span> Stock:{stock}</h4>
-                        <h4 className="flex"><span><IoPricetagSharp /></span> Price:{price}</h4>
-                        <h4 className="flex"><span><MdOutlineAccessTime /></span> Delivery Time:{time}</h4>
-                        <h4 className="flex"><span><FaScrewdriverWrench /></span> Customization:{customization}</h4>
+                        <h4 className="flex items-center gap-x-3"><span><FaStar /></span> Rating:{rating}</h4>
+                        <h4 className="flex items-center gap-x-3"><span><MdCollections /></span> Stock:{stock}</h4>
+                        <h4 className="flex items-center gap-x-3"><span><IoPricetagSharp /></span> Price:{price}</h4>
+                        <h4 className="flex items-center gap-x-3"><span><MdOutlineAccessTime /></span> Delivery Time:{time}</h4>
+                        <h4 className="flex items-center gap-x-3"><span><FaScrewdriverWrench /></span> Customization:{customization}</h4>
+                        <h4 className="flex items-center gap-x-3"><span><MdMarkEmailRead /></span> Email:{email}</h4>
+                        <h4 className="flex items-center gap-x-3"><span><FaUserAlt /></span> User Name:{user}</h4>
                     </div>
                 </div>
             </div>

@@ -24,7 +24,6 @@ const Home = () => {
 
     return (
         <div>
-            <h2>Hi this is home page: {myUsers.length}</h2>
 
             <div className='mt-10 mb-10'>
             <Swiper
