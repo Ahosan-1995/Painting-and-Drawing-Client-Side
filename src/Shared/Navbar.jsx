@@ -25,7 +25,7 @@ const Navbar = () => {
         <NavLink to='/myitem'><li><a>MY ART & CRAFT</a></li></NavLink>
         {/* <NavLink to='/login'><li><a>Login</a></li></NavLink> */}
         <NavLink to='/register'><li><a>Register</a></li></NavLink>
-        <NavLink to='/contact'><li><a>Contact Us!</a></li></NavLink>
+        <NavLink to='/update'><li><a>Update</a></li></NavLink>
     
     </>
 

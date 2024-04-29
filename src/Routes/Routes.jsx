@@ -6,6 +6,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import AddArtAndCraft from "../Pages/AddArtAndCraft";
 import PrivateRoute from "./PrivateRoute";
+import Update from "../Pages/Update";
 
 
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path:'/add',
                 element:<PrivateRoute><AddArtAndCraft></AddArtAndCraft></PrivateRoute>
+            },
+            {
+                path:'/update',
+                element:<PrivateRoute><Update></Update></PrivateRoute>
             }
         ]
     }
