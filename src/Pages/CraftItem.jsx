@@ -11,6 +11,7 @@ const CraftItem = ({myUser}) => {
                 </div>
                 <div>
                     <h1 className="text-5xl font-bold">{itemName}</h1>
+                    <h1 className="text-xl font-bold">{subcategory}</h1>
                     <p className="py-6">{description}</p>
                     <Link to={`/details/${_id}`}><button className="btn btn-primary">View Details</button></Link>
                 </div>

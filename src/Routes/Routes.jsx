@@ -13,7 +13,6 @@ import AllArtAndCraft from "../Pages/AllArtAndCraft";
 import ArtAndCraftSubCategory from "../Pages/ArtAndCraftSubCategory";
 
 
-
 const router = createBrowserRouter([
     {
         path:'/',
@@ -50,7 +49,7 @@ const router = createBrowserRouter([
             {
                 path:'/myCraft',
                 element: <PrivateRoute><MyArtAndCraft></MyArtAndCraft></PrivateRoute>,
-                // loader:()=>fetch()
+                loader: () => fetch('http://localhost:5000/assignment')
             },
             {
                 path: '/allArt',

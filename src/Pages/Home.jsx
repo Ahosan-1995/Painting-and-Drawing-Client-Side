@@ -14,6 +14,7 @@ import CraftItem from './CraftItem';
 import OurCeo from './OurCeo';
 import WhyDifferent from './WhyDifferent';
 import { useLoaderData } from 'react-router-dom';
+import ArtAndCraftSubCategory from './ArtAndCraftSubCategory';
 
 
 const Home = () => {
@@ -78,6 +79,13 @@ const Home = () => {
                 <h1 className='text-center mb-10 font-extrabold text-3xl'>Why we are different form other</h1>
                 <WhyDifferent></WhyDifferent>
             </div>
+
+            <br />
+            <hr />
+
+               <div>
+                <ArtAndCraftSubCategory></ArtAndCraftSubCategory>
+               </div>
 
             <br />
             <hr />
