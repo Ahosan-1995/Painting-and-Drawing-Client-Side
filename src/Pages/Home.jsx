@@ -15,9 +15,11 @@ import OurCeo from './OurCeo';
 import WhyDifferent from './WhyDifferent';
 import { useLoaderData } from 'react-router-dom';
 import ArtAndCraftSubCategory from './ArtAndCraftSubCategory';
+import { useEffect, useState } from 'react';
 
 
 const Home = () => {
+
 
     const myUsers = useLoaderData();
     console.log(myUsers);

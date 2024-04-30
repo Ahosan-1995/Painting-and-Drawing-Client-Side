@@ -1,18 +1,39 @@
 
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 
+// For dark mode
+
+
+
 const Navbar = () => {
 
-    // for Dark Mode
-
-
-
-
     
-    // for Dark Mode
+        // Dark Mode
+        const [theme, setTheme] = useState(localStorage.getItem('theme')?localStorage.getItem('theme'):'light');
+
+
+        useEffect(()=>{
+            localStorage.setItem('theme', theme);
+            const localTheme = localStorage.getItem('theme');
+            document.querySelector('html').setAttribute('data-theme',localTheme)
+        },[theme]);
+
+        const handleToggle = e =>{
+            if(e.target.checked){
+                setTheme('dark');
+            }else{
+                setTheme('light');
+            }
+        }
+        // Dark Mode
+
+
+
+
+   
 
 
     const {user,logOut}=useContext(AuthContext);
@@ -58,7 +79,7 @@ const Navbar = () => {
                         {navLinks}
                         </ul>
                     </div>
-                    <input type="checkbox" value="synthwave" className="toggle theme-controller"/>
+                    
                     <div className="navbar-end">
                     {
                             user ? 
@@ -86,6 +107,11 @@ const Navbar = () => {
                           
                         }
                     </div>
+
+
+                    {/* Dark mode */}
+                    <input onChange={handleToggle} type="checkbox" value="synthwave" className="toggle theme-controller"/>
+                    
             </div>
         </div>
     );
