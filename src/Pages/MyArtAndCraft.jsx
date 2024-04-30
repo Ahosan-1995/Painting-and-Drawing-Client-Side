@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const MyArtAndCraft = () => {
@@ -20,19 +21,62 @@ const MyArtAndCraft = () => {
     const [users, setUsers]= useState(loaderData);
 
     const handleDelete = id =>{
-        // Confirmation sweet alert
-        fetch(`http://localhost:5000/assignment/${id}`,{
-            method:'DELETE'
-        })
-        .then(res=>res.json())
-        .then(data=>{
-            if(data.deletedCount>0){
-                console.log('deleted Successfully');
-                // remove user from ui
-                const remainingUsers = emailCrad.filter(emailcard2=emailcard2._id !== id);
-                setemailCard(remainingUsers);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
+              
+              
+
+
+
+
+
             }
-        })
+
+            fetch(`http://localhost:5000/assignment/${id}`,{
+                method:'DELETE'
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                if(data.deletedCount>0){
+                    console.log('deleted Successfully');
+                    // remove user from ui
+                    const remainingUsers = emailCrad.filter(emailcard2=emailcard2._id !== id);
+                    setemailCard(remainingUsers);
+                }
+            })
+
+
+          });
+
+
+
+
+        // Confirmation sweet alert
+        // fetch(`http://localhost:5000/assignment/${id}`,{
+        //     method:'DELETE'
+        // })
+        // .then(res=>res.json())
+        // .then(data=>{
+        //     if(data.deletedCount>0){
+        //         console.log('deleted Successfully');
+        //         // remove user from ui
+        //         const remainingUsers = emailCrad.filter(emailcard2=emailcard2._id !== id);
+        //         setemailCard(remainingUsers);
+        //     }
+        // })
 
     }
 

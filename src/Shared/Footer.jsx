@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-blue-950 text-neutral-content">
+        <footer className="footer p-10 bg-blue-950 text-neutral-content flex flex-col">
                 <div className='flex flex-row items-center content-center  justify-stretch'>
                     <div>
                     <img className='mr-20' src="/logo-white.png" alt="" />
@@ -12,7 +12,7 @@ const Footer = () => {
                             <h6 className="footer-title">Services</h6> 
                             <a className="link link-hover">Branding</a>
                             <a className="link link-hover">Design</a>
-                            <a className="link link-hover">Marketing</a>
+                            <a className="link link-hover">Web hosting</a>
                             <a className="link link-hover">Advertisement</a>
                         </nav> 
                         <nav className='flex flex-col gap-2'>
@@ -23,13 +23,15 @@ const Footer = () => {
                             <a className="link link-hover">Press kit</a>
                         </nav> 
                         <nav className='flex flex-col gap-2'>
-                            <h6 className="footer-title">Legal</h6> 
-                            <a className="link link-hover">Terms of use</a>
-                            <a className="link link-hover">Privacy policy</a>
-                            <a className="link link-hover">Cookie policy</a>
+                            <h6 className="footer-title">Social</h6> 
+                            <a className="link link-hover">Facebook</a>
+                            <a className="link link-hover">Twitter</a>
+                            <a className="link link-hover">Instagram</a>
                         </nav>
                     </div>
+                    
                 </div>
+                <p>@All copyrights Reserve to Batpta</p>
         </footer>
     );
 };

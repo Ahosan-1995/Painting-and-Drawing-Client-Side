@@ -1,8 +1,18 @@
-# React + Vite
+# Batota
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live site:
 
-Currently, two official plugins are available:
+- [BookWorld](https://fascinating-valkyrie-499f03.netlify.app/listedBook)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [GitHubLink](https://github.com/programming-hero-web-course-4/B9A10-client-side-Ahosan-1995.git)
+
+
+Features of this site:
+- Selected category: Painting and Drawing
+- Single page application loaded data efficiently
+- Full navigation control on the home page.
+- Data will be loaded very first and accurately.
+- All the content placement is well structured.
+- Secure login method.
+- Presentation of this site is professional and minimal. 
+- Responsive design.
