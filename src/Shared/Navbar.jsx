@@ -6,6 +6,14 @@ import { AuthContext } from '../Provider/AuthProvider';
 
 const Navbar = () => {
 
+    // for Dark Mode
+
+
+
+
+    
+    // for Dark Mode
+
 
     const {user,logOut}=useContext(AuthContext);
 
@@ -26,7 +34,7 @@ const Navbar = () => {
         <NavLink to='/myCraft'><li><a>MY ART & CRAFT</a></li></NavLink>
         {/* <NavLink to='/login'><li><a>Login</a></li></NavLink> */}
         <NavLink to='/register'><li><a>Register</a></li></NavLink>
-        <NavLink to='/update'><li><a>Update</a></li></NavLink>
+        {/* <NavLink to='/update/:id'><li><a>Update</a></li></NavLink> */}
         <NavLink to='/sub'><li><a>Sub-category</a></li></NavLink>
     
     </>
@@ -50,6 +58,7 @@ const Navbar = () => {
                         {navLinks}
                         </ul>
                     </div>
+                    <input type="checkbox" value="synthwave" className="toggle theme-controller"/>
                     <div className="navbar-end">
                     {
                             user ? 
@@ -68,7 +77,8 @@ const Navbar = () => {
                                 </div>
                             </div>
                         }
-                    {
+                        
+                        {
                             user ? 
                             <button onClick={() => {toast('Logged out successfully.'); handleSignOut();}}  className="btn">Sign Out</button>
                             :

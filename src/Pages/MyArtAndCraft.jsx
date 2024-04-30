@@ -75,7 +75,7 @@ const MyArtAndCraft = () => {
                                 <p className="">Customization:{emailCard1.customization}</p>
                                 <p className="">Stock Status:{emailCard1.stock}</p>
                                 <div className="flex flex-row gap-x-3">
-                                    <Link to='/update'><button className="btn btn-primary">Update</button></Link>
+                                    <Link to={`/update/${emailCard1._id}`}><button className="btn btn-primary">Update</button></Link>
                                     <Link><button onClick={()=>handleDelete(emailCard1._id)} className="btn btn-primary">Delete</button></Link>
                                 </div>
                             </div>

@@ -37,8 +37,9 @@ const router = createBrowserRouter([
                 element:<PrivateRoute><AddArtAndCraft></AddArtAndCraft></PrivateRoute>
             },
             {
-                path:'/update',
-                element:<PrivateRoute><Update></Update></PrivateRoute>
+                path:'/update/:id',
+                element:<PrivateRoute><Update></Update></PrivateRoute>,
+                loader: ({params})=>fetch(`http://localhost:5000/assignment/${params.id}`)
             },
             {
                 path:'/details/:id',
