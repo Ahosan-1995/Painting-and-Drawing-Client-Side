@@ -16,6 +16,30 @@ const MyArtAndCraft = () => {
 
     // console.log(email);
 
+    // For delete operation
+    const [users, setUsers]= useState(loaderData);
+
+    const handleDelete = id =>{
+        // Confirmation sweet alert
+        fetch(`http://localhost:5000/assignment/${id}`,{
+            method:'DELETE'
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            if(data.deletedCount>0){
+                console.log('deleted Successfully');
+                // remove user from ui
+                const remainingUsers = emailCrad.filter(emailcard2=emailcard2._id !== id);
+                setemailCard(remainingUsers);
+            }
+        })
+
+    }
+
+
+
+    // 
+
 
 
     useEffect(()=>{
@@ -52,7 +76,7 @@ const MyArtAndCraft = () => {
                                 <p className="">Stock Status:{emailCard1.stock}</p>
                                 <div className="flex flex-row gap-x-3">
                                     <Link to='/update'><button className="btn btn-primary">Update</button></Link>
-                                    <Link><button className="btn btn-primary">Delete</button></Link>
+                                    <Link><button onClick={()=>handleDelete(emailCard1._id)} className="btn btn-primary">Delete</button></Link>
                                 </div>
                             </div>
                         </div>
