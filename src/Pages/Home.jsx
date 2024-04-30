@@ -43,14 +43,7 @@ const Home = () => {
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
-                <SwiperSlide   style={{backgroundImage:'url(https://i.ibb.co/3hNyyzt/Landscap.jpg)'}} className='w-full border rounded-xl '>
-                    <div  >
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                    </div>
-                </SwiperSlide>
+                
 
 
 

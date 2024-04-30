@@ -24,13 +24,15 @@ const ArtAndCraftSubCategory = () => {
             {
                 myData.map(data=>
 
-            <Link key={data._id} to='/sub'><div  className="md: flex md: flex-col">
+            <Link key={data._id} to='/sub'>
+                <div  className="md: flex md: flex-col">
             <img className="w-60 h-40" src={data.imgURL} alt="" />
             <div>
                 <p>Category: {data.category}</p>
                 <Slide triggerOnce><p>Subcategory: {data.subcategory}</p></Slide>
             </div>
-        </div>
+            <button className="btn w-3/4">View Details</button>
+            </div>
         </Link>
             )
             }

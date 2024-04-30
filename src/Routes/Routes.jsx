@@ -11,6 +11,7 @@ import ViewDetails from "../Pages/ViewDetails";
 import MyArtAndCraft from "../Pages/MyArtAndCraft";
 import AllArtAndCraft from "../Pages/AllArtAndCraft";
 import ArtAndCraftSubCategory from "../Pages/ArtAndCraftSubCategory";
+import ViewDetails2 from "../Pages/ViewDetails2";
 
 
 const router = createBrowserRouter([
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>,
-                loader: () => fetch('http://localhost:5000/assignment')
+                loader: () => fetch('https://assignment-10-server-side-pied.vercel.app/assignment')
             },
             {
                 path:'/login',
@@ -39,29 +40,34 @@ const router = createBrowserRouter([
             {
                 path:'/update/:id',
                 element:<PrivateRoute><Update></Update></PrivateRoute>,
-                loader: ({params})=>fetch(`http://localhost:5000/assignment/${params.id}`)
+                loader: ({params})=>fetch(`https://assignment-10-server-side-pied.vercel.app/assignment/${params.id}`)
             },
             {
                 path:'/details/:id',
                 element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-                loader: ({params})=> fetch (`http://localhost:5000/assignment/${params.id}`)
+                loader: ({params})=> fetch (`https://assignment-10-server-side-pied.vercel.app/assignment/${params.id}`)
                 
             },
             {
                 path:'/myCraft',
                 element: <PrivateRoute><MyArtAndCraft></MyArtAndCraft></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/assignment')
+                loader: () => fetch('https://assignment-10-server-side-pied.vercel.app/assignment')
             },
             {
                 path: '/allArt',
                 element: <PrivateRoute><AllArtAndCraft></AllArtAndCraft></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/assignment')
+                loader: () => fetch('https://assignment-10-server-side-pied.vercel.app/assignment')
 
             },
             {
                 path:'/sub',
                 element:<PrivateRoute><ArtAndCraftSubCategory></ArtAndCraftSubCategory></PrivateRoute>,
-                loader: ()=>fetch('http://localhost:5000/subcategory')
+                loader: ()=>fetch('https://assignment-10-server-side-pied.vercel.app/subcategory')
+            },
+            {
+                path:'/viewDetails/:id',
+                element: <PrivateRoute><ViewDetails2></ViewDetails2></PrivateRoute>,
+                loader: ({params})=> fetch (`https://assignment-10-server-side-pied.vercel.app/subcategory/${params.id}`)
             }
         ]
     }

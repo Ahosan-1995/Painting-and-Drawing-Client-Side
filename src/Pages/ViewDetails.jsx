@@ -14,7 +14,6 @@ const ViewDetails = () => {
 
     return (
         <div>
-            <h1>this is details page</h1>
             <div className="card card-side bg-base-100 shadow-xl m-10">
                 <figure><img src={url} alt="Movie"/></figure>
                 <div className="card-body">

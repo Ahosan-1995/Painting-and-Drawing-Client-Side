@@ -25,7 +25,7 @@ const Update = () => {
 
         // console.log(allData);
         // sent data to server
-        fetch(`http://localhost:5000/assignment/${_id}`,{
+        fetch(`https://assignment-10-server-side-pied.vercel.app/assignment/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'
@@ -35,11 +35,11 @@ const Update = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
-            if(data.insertedId){
+            if(data.modifiedCount){
                 // toast('Data added successfully to the database');
                 Swal.fire({
                     title: 'Success',
-                    text: 'User Information Updated Successfully',
+                    text: 'Data Information Updated Successfully',
                     icon: 'Success',
                     confirmButtonText: 'Cool'
                   })

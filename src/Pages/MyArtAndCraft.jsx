@@ -45,7 +45,7 @@ const MyArtAndCraft = () => {
 
             }
 
-            fetch(`http://localhost:5000/assignment/${id}`,{
+            fetch(`https://assignment-10-server-side-pied.vercel.app/assignment/${id}`,{
                 method:'DELETE'
             })
             .then(res=>res.json())
@@ -65,7 +65,7 @@ const MyArtAndCraft = () => {
 
 
         // Confirmation sweet alert
-        // fetch(`http://localhost:5000/assignment/${id}`,{
+        // fetch(`https://assignment-10-server-side-pied.vercel.app/assignment/${id}`,{
         //     method:'DELETE'
         // })
         // .then(res=>res.json())
@@ -87,7 +87,7 @@ const MyArtAndCraft = () => {
 
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/assignmentemail/${email}`)
+        fetch(`https://assignment-10-server-side-pied.vercel.app/assignmentemail/${email}`)
         .then(res=>res.json())
         .then(data=>{
             // console.log(data);

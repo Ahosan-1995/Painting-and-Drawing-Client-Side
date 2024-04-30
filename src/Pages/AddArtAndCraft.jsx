@@ -23,7 +23,7 @@ const AddArtAndCraft = () => {
 
         console.log(allData);
         // sent data to server
-        fetch('http://localhost:5000/add',{
+        fetch('https://assignment-10-server-side-pied.vercel.app/add',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
