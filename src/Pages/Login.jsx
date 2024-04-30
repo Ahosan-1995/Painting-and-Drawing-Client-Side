@@ -92,7 +92,7 @@ const Login = () => {
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Login now!</h1>
-                    <p className="py-6">For assistance, contact our support team at comfortrealestate@gmail.com</p>
+                    <p className="py-6">For assistance, contact our support team at BatotaPaint@gmail.com</p>
                     </div>
                     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleLogin} className="card-body">
