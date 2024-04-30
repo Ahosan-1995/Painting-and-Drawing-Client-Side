@@ -10,6 +10,7 @@ import Update from "../Pages/Update";
 import ViewDetails from "../Pages/ViewDetails";
 import MyArtAndCraft from "../Pages/MyArtAndCraft";
 import AllArtAndCraft from "../Pages/AllArtAndCraft";
+import ArtAndCraftSubCategory from "../Pages/ArtAndCraftSubCategory";
 
 
 
@@ -56,6 +57,11 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><AllArtAndCraft></AllArtAndCraft></PrivateRoute>,
                 loader: () => fetch('http://localhost:5000/assignment')
 
+            },
+            {
+                path:'/sub',
+                element:<PrivateRoute><ArtAndCraftSubCategory></ArtAndCraftSubCategory></PrivateRoute>,
+                loader: ()=>fetch('http://localhost:5000/subcategory')
             }
         ]
     }
