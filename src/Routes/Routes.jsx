@@ -12,6 +12,7 @@ import MyArtAndCraft from "../Pages/MyArtAndCraft";
 import AllArtAndCraft from "../Pages/AllArtAndCraft";
 import ArtAndCraftSubCategory from "../Pages/ArtAndCraftSubCategory";
 import ViewDetails2 from "../Pages/ViewDetails2";
+import ToDo from "../Pages/ToDo";
 
 
 const router = createBrowserRouter([
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
                 path:'/viewDetails/:id',
                 element: <PrivateRoute><ViewDetails2></ViewDetails2></PrivateRoute>,
                 loader: ({params})=> fetch (`https://assignment-10-server-side-pied.vercel.app/subcategory/${params.id}`)
+            },
+            {
+                path:'/todo',
+                element:<PrivateRoute><ToDo></ToDo></PrivateRoute>
             }
         ]
     }

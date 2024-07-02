@@ -6,6 +6,8 @@ Live site:
 
 - [GitHubLink](https://github.com/programming-hero-web-course-4/B9A10-client-side-Ahosan-1995.git)
 
+Project Overview: 
+This webite base on painting and drawing. This  website can offer a distinctive and engaging experience that attracts both artists and art enthusiasts.
 
 Features of this site:
 - Selected category: Painting and Drawing
@@ -16,3 +18,8 @@ Features of this site:
 - Secure login method.
 - Presentation of this site is professional and minimal. 
 - Responsive design.
+
+Technology: React, JavaScript, CSS, MongoDb, Nodejs.
+
+Dependencies To run this project locally:
+- React, React router, Tailwind CSS, Daisy UI, Firebase and have to change firebase key
